@@ -1,26 +1,16 @@
-# NewJavaProject
+# Prime Video Telemetry project
 
-A plain Java project (no build tool), set up for IntelliJ IDEA on JDK 21.
+Step 1
+Create a class to accept command line commands from CLI
+Commands will be playback commands like
+1 PLAY_REQUESTED
+2 PLAY
+3 PAUSE
+4 STOP
+etc it will have metadata with it.
 
-## Layout
+Step 2
+Each command will be a part of a state machine current command means current state.
 
-```
-NewJavaProject/
-├── src/
-│   └── Main.java        entry point
-├── NewJavaProject.iml   IntelliJ module file
-└── readme.md
-```
-
-Compiled classes go to `out/`, which is git-ignored.
-
-## Run
-
-In IntelliJ: open this folder and run `Main`.
-
-From a terminal:
-
-```
-javac -d out src/Main.java
-java -cp out Main
-```
+Step 3
+Implement states such that we can track telemetry and logistics like avg buffer time, avg play time, number play starts, etc/
